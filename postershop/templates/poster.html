@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/singleposter.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/preview.css') }}" />
+{% endblock %}
+{% block body %}
+<div class="single-poster-section">
+    <div class="column-section">
+        <div class="single-poster-content">
+            <div class="single-poster-image-container">
+                <img id="main-img" class="single-poster-image" src="{{ poster.image }}" alt="">
+                <div class="poster-tumbnails-container">
+                    <img class="poster-tumbnail-img" src="{{ poster.image }}" alt="">
+                    <img class="poster-tumbnail-img" src="/static/images/interior1.jpg" alt="">
+                    <img class="poster-tumbnail-img" src="/static/images/interior2.jpg" alt="">
+                    <img class="poster-tumbnail-img" src="/static/images/interior3.jpg" alt="">
+                </div>
+            </div>
+            <div class="single-poster-details">
+                <h1 id="poster-title" data-query-title="{{ poster.title }}">{{poster.display_title}}</h1>
+
+                <div class="custom-select">
+                    <select id="select-type">
+                        <option value="choose">Choose size
+                        </option>
+                        <option value="{{ poster_large.type }}">{{ poster_large.size }} - &euro;{{ poster_large.price }}
+                        </option>
+                        <option value="{{ poster_medium.type }}">{{ poster_medium.size }} -
+                            &euro;{{ poster_medium.price }}
+                        </option>
+                        <option value="{{ poster_small.type }}">{{ poster_small.size }} - &euro;{{ poster_small.price }}
+                        </option>
+                    </select>
+                </div>
+                <div class="poster-buttons">
+                    <div class="poster-bag-btn">Add to
+                        bag
+                    </div>
+                    <div class="poster-now-btn">Buy now
+                    </div>
+                </div>
+                <p class="poster-lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur consequatur tempora consequuntur sunt in quasi
+                    veritatis sit officia temporibus doloribus modi aliquam vitae ex ab,
+                    officiis eum commodi odit at optio a nihil velit hic porro! Blanditiis. Lorem ipsum dolor sit amet
+                    consectetur, adipisicing elit. Deserunt rem, voluptate cupiditate suscipit laboriosam sed. <br><br>
+                    odio quod deleniti voluptas. Rem nihil quis blanditiis dolorem. Ipsum adipisci quo,
+                    beatae distinctio repudiandae esse iste assumenda ducimus ad. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Illum vitae at necessitatibus reprehenderit a fuga neque laudantium soluta quos
+                    repudiandae.
+                </p>
+                <p class="poster-description">
+                    <medium>{{poster.paper}}</medium> <br>
+                    <small>{{poster.paper_description}}</small> <br>
+                    <medium>{{poster.description}}</medium> <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="preview-section">
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/poster.js') }}"></script>
+{% endblock %}

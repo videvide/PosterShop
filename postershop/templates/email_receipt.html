@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/
+    xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster order</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            Margin: 0;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: white;
+            padding-bottom: 40px;
+        }
+
+        .webkit {
+            max-width: 600px;
+            background-color: #ffffff;
+        }
+
+        .outer {
+            Margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #4a4a4a;
+        }
+
+        .order-details {
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .order-table {
+            Margin-top: 5px;
+            Margin-bottom: 22px;
+            text-align: left;
+            Margin-left: 45px;
+            Margin-right: auto;
+        }
+
+        .logo-link,
+        .logo-link a {
+            text-decoration: none;
+            color: #dbdbdb;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- try to add links on multiple places -->
+    <center class="wrapper">
+        <div class="webkit">
+            <table class="outer" align="center">
+                <tr>
+                    <td>
+                        <table width="100%" style="border-spacing: 0;">
+                            <tr>
+                                <td style="background-color: #39424b; padding:10px;text-align:center;">
+                                    <a href="#">
+                                        <img src="https://i.ibb.co/SPDthsP/email-logo.png" width="300">
+                                    </a>
+                                    <p class="logo-link">Linköping, Sweden
+                                    </p>
+                                    <p class="logo-link"><a href="mailto:email@example.com">krajncvide53@gmail.com</a>
+                                    </p>
+                                    <p class="logo-link" style="Margin-bottom:10px;"><a
+                                            href="tel:+46793453153">+46793453153</a></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" style="border-spacing: 0;">
+                            <tr>
+                                <td class="order-details">
+                                    <h1 style="Margin-bottom: 5px;">Test Receipt</h1>
+                                    <small>Order-id: {{ order_info['order_id'] }} --OBS DETTA ÄR ETT TEST!</small>
+                                    <table class="order-table"
+                                        style="width:99%;border-collapse: collapse;border-spacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <p>Produkt: </p>
+                                                </th>
+                                                <th>
+                                                    <p>Antal: </p>
+                                                </th>
+                                                <th>
+                                                    <p>Summa: </p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in line_items_info %}
+                                            <tr>
+                                                <td>{{ item['name'] }}</td>
+                                                <td>{{ item['quantity'] }}</td>
+                                                <td>€{{ item['amount'] }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Total:</strong></p>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    €{{ order_info['order_total'] }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h3>Leverans info:</h3>
+                                    {{ customer_info['shipping_name'] }}<br>
+                                    {{ customer_info['shipping_address']['line1'] }}<br>
+                                    {{ customer_info['shipping_address']['line2'] }}<br>
+                                    {{ customer_info['shipping_address']['postal_code'] }}<br>
+                                    {{ customer_info['shipping_address']['city'] }}<br>
+                                    {{ customer_info['shipping_address']['state'] }}<br>
+                                    {{ customer_info['shipping_address']['country'] }}<br>
+                                    <h5 style="Margin-bottom: 0;Margin-top:20px;">Stripe order-info:</h5>
+                                    <small>{{ order_info['payment_intent'] }}</small><br>
+                                    <small>{{ order_info['checkout_session_id'] }}</small>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" style="border-spacing: 0;">
+                            <tr>
+                                <td style="background-color: #3f4a53;padding: 15px;text-align: center;">
+                                    <p style="font-size: 18px;color: #ffffff;Margin-bottom: 13px;"></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #fafafa;">
+                        <table width="100%" style="border-spacing: 0;">
+                            <tr>
+                                <td height="15" style="background-color: #3f4a53;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+</body>
+
+</html>

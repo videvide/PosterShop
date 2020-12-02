@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="section-container">
+    <div class="success-cancel-section center">
+        <h1>Thank you for your purchase!</h1>
+        <h4>Receipt will be sent with email.</h4>
+        <h4>If you have any questions, please contact us:
+            <a href="mailto:orders@example.com">orders@example.com</a>.</h4>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/cls.js') }}"></script>
+{% endblock %}

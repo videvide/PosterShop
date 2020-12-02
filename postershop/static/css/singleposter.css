@@ -1,0 +1,205 @@
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    width: 200px;
+    color: rgb(110, 110, 110);
+    font-size: 1.2rem;
+}
+.custom-select select {
+    display: none;
+}
+.select-selected {
+    background-color: rgb(255, 255, 255);
+}
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: rgb(110, 110, 110) transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent rgb(110, 110, 110) transparent;
+    top: 7px;
+}
+.select-items div,.select-selected {
+    color: rgb(110, 110, 110);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0) transparent;
+    cursor: pointer;
+}
+.select-items {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+.select-hide {
+    display: none;
+}
+.select-items div:hover, .same-as-selected {
+    background-image: linear-gradient(to bottom right, rgba(198, 221, 236, 0.748), rgba(198, 221, 236, 0.448), rgba(198, 221, 236, 0.148));
+    /* background-color: rgba(198, 221, 236, 0.248);
+    box-shadow: inset 0 0 30px rgb(198, 221, 236); */
+}
+.single-poster-section{
+    width: 100%;
+    row-gap: 15px;
+    padding-top: 40px;
+}
+.column-section{
+    display: flex;
+    flex-direction: column;
+}
+.single-poster-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+#poster-title{
+    font-weight: lighter;
+    margin-bottom: 40px;
+    margin-left: 2px;
+    letter-spacing: 3px;
+    text-transform: unset;
+}
+.single-poster-details{
+    width: 40%;
+    margin-top: 20px;
+}
+.single-poster-image-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    
+}
+.single-poster-image{
+    width: 100%;
+    max-height: 600px;
+    margin-bottom: 20px;
+    box-shadow:         1px 10px 20px -5px #ccc;
+}
+.poster-tumbnails-container{
+    display: flex;
+    justify-content: space-between;
+}
+.poster-tumbnail-img{
+    width: 25%;
+    max-height: auto;
+    cursor: pointer;
+}
+
+.poster-buttons{
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+.poster-bag-btn{
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 200px;
+    height: 35px;
+    background-color: rgb(54, 54, 54);
+    cursor: pointer;
+    margin: 10px 0rem 2px 0rem;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+}
+.poster-now-btn{
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 200px;
+    height: 35px;
+    background-color: rgb(54, 54, 54);
+    cursor: pointer;
+    margin: 0px 0rem 2.5rem 0rem;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+}
+.poster-lorem{
+    letter-spacing: .8px;
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+}
+
+.poster-description{
+    letter-spacing: .8px;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 668px){
+    .single-poster-section{
+        width: 100%;
+        row-gap: 15px;
+        padding-top: 0px;
+        padding: 0px;
+    }
+    .single-poster-content{
+        flex-direction: column;
+    }
+    .single-poster-details{
+        width: 100%;
+        padding: 0 15px 0 15px;
+    }
+    .single-poster-details h1, h2, h3{
+        text-align: center;
+    }
+    .single-poster-image-container{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 93%;
+    }
+    .single-poster-image{
+        width: 100%;
+        max-height: 530px;
+        margin-bottom: 20px;
+    }
+    .poster-buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 0px;
+    }
+    .poster-bag-btn{
+        justify-self: center;
+        width: 49%;
+        height: 40px;
+        font-size: 1.5rem;
+        margin: 10px 0rem 2.5rem 0rem;
+    }
+    .poster-now-btn{
+        justify-self: center;
+        width: 49%;
+        height: 40px;
+        font-size: 1.5rem;
+        margin: 10px 0rem 2.5rem 0rem;
+    }
+    .poster-tumbnails-container{
+        display: flex;
+        justify-content: center;
+    }
+    .poster-tumbnail-img{
+        width: 25%;
+        max-height: auto;
+        cursor: pointer;
+    }
+    .custom-select{
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+
+}

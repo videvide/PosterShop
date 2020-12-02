@@ -1,0 +1,248 @@
+.posters-container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    row-gap: 80px;
+    column-gap: 50px;
+    flex-wrap: wrap;
+    padding: 30px 80px 0px 80px;
+    justify-content:center;
+}
+.poster{
+    height: 520px;
+    width: 330px;
+    background-color: transparent;
+    perspective: 1000px;
+    padding-top: 20px;
+    border-radius: 5px;
+}
+.card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 1px 10px 20px -5px #ccc;
+}
+.poster:hover .card{
+    transform: rotateY(180deg);
+}
+.front-img{
+    height: 420px;
+    width: 100%;
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front-title{
+    margin-bottom: 7px;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+}
+.back-img{
+    height: 290px;
+    width: 65%;
+    box-shadow: 1px 10px 20px -5px #ccc;
+    /* border: rgb(0, 0, 0) solid 2px; */
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 35px 0px 5px 0px;
+}
+.back h1{
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.card-btn{
+    color: rgb(255, 255, 255);
+    background-color: rgb(54, 54, 54);
+    border: solid 1px rgba(114, 114, 114, 0.774);
+    cursor: pointer;
+    height: 48px;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    border-radius: .5px;
+}
+.card-select{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    width: 100%;
+    transition: all .2s ease-out;
+    padding: 0px 0px 0px 2px;
+}
+.card-select .select-item{
+    color: rgba(68, 68, 68, 0.808);
+    letter-spacing: .8px;
+    font-size: 1rem;
+    padding: 2px 0px 1px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 80px;
+    cursor:pointer;
+}
+.card-select input[type=radio]{
+    display: none;
+}
+.card-select input[type=radio]:checked + .select-item{
+    background-image: linear-gradient(to bottom right, rgba(198, 221, 236, 0.748), rgba(198, 221, 236, 0.448), rgba(198, 221, 236, 0.148));
+} 
+
+@media screen and (max-width: 1100px){
+    .posters-container{
+        padding: 0px 30px 0px 30px;
+        row-gap: 20px;
+        column-gap: 30px;
+    }
+    .poster{
+        height: 500px;
+    }
+    .poster:hover .card{
+        transform: none;
+    }
+    .front{
+    display: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
+    }
+    .back{
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible; 
+    transform: none;
+    padding: 15px 0px 5px 0px;
+    }
+    .back-img{
+        height: 300px;
+        width: 70%;
+    }
+    .card-select{
+    column-gap: 3px;
+    }
+    .card-buttons{
+    padding: 0px 20px;
+    margin-top: 13px;
+    margin-bottom: 0px;
+    }
+    .card-btn{
+    height: 42px;
+    width: 45%;
+    font-size: 1.1rem;
+    }
+}
+/* IPAD */
+@media screen and (max-width: 900px){
+    .posters-container{
+        column-gap: 30px;
+        row-gap: 50px;
+        padding: 30px 20px 0px 20px;
+        justify-content: space-evenly;
+    }
+    .poster{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 668px){
+    .posters-container{
+        flex-direction: column;
+        padding: 0px 20px 0px 20px;
+        justify-content: center;
+        row-gap: 35px;
+    }
+    .poster{
+        height: auto;
+        width: 100%;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .back-img{
+        height: 320px;
+        width: 72%;
+    }
+    .back{
+        position: relative;
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .back h1{
+        font-size: 1.8rem;
+    }
+    .card-buttons{
+        padding: 0px 40px;
+        margin-top: 13px;
+        margin-bottom: 15px;
+    }
+    .card-btn{
+        height: 45px;
+        width: 45%;
+        font-size: 1.3rem;
+    }
+    .card-select{
+        column-gap: 15px;
+    }
+    .card-select .select-item{
+        height: 30px;
+        width: 80px;
+    }
+}
+@media screen and (max-width: 338px){
+    .back-img{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 290px){
+    .back-img{
+        width: 95%;
+    }
+    .card-select{
+    column-gap: 15px;
+    }
+    .card-select .select-item{
+        font-size: .9rem;
+        height: 30px;
+        width: 50px;
+        margin: 5px;
+    }
+    .card-buttons{
+        padding: 0px 20px;
+        margin-top: 13px;
+        margin-bottom: 15px;
+    }
+    .card-btn{
+        height: 45px;
+        width: 45%;
+        font-size: 1.3rem;
+    }
+}

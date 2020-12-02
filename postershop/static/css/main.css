@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    font-size: 62.5%; /*this changes the font size to 10px so that you can use 2 rem as 20px and 1.5 as 15px and so on :) */
+    color: rgb(110, 110, 110);
+        
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    font-weight: 100;
+}
+.email{
+    font-size: 1.5rem;
+}
+a:active,
+:visited{
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+}
+p{
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+    margin-bottom: 20px;
+}
+h1{
+    margin: 15px 0px;
+    font-size: 2.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+}
+h2{
+    margin: 20px 0px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+h3{
+    margin: 20px 0px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+h4{
+    margin: 15px 0px 10px 0px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* h6 används som remove knapp i bag */
+.center{
+    text-align: center;
+}
+#consent-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+#consent-popup{
+    border-radius: 2px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    padding: 2px;
+}
+#consent-popup p, a{
+    font-size: 1.25rem;
+    letter-spacing: 0.7px;
+    margin-bottom: 0px;
+}
+#consent-popup a{
+    text-decoration: underline;
+}
+#consent-popup-btn{
+    border-radius: 2px;
+    height: 35px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin-left: 1.2px;
+    padding: 2px;
+    font-size: 1.4rem;
+}
+#consent-popup-btn a{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.719);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+.nested-bar{
+    margin-left: auto;
+}
+.list-logo{
+    visibility: hidden;
+}
+.bag-logo{
+    margin-left: auto;
+    margin-right: 50px;
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.nav-list {
+    margin-left: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.nav-item {
+    margin-right: 50px;
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: rgb(133, 133, 133);
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0;
+}
+.hamburger-menu{
+    visibility: hidden;
+}
+.main-container{
+    min-height: 100vh;
+    width: auto;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 140px 0px 100px 0px;
+    z-index: 0;    
+}
+.section-container{
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* SUCCESS-CANCEL SECTION */
+.success-cancel-section{
+    margin-top: 80px;
+}
+.success-cancel-section h1{
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.success-cancel-section h3{
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.success-cancel-section h4{
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.success-cancel-section p{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+/* FOTTER SECTION  */
+.footer{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    bottom: 0;
+}
+.footer-ul{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.footer-ul li{
+    font-size: 1.1rem;
+    letter-spacing: 1.6px;
+    margin: 0 2rem;
+    list-style: none;
+}
+.footer a{
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+}
+.footer-copy{
+    color: rgb(110, 110, 110);
+    font-size: 1.1rem;
+    letter-spacing: 1.1px;
+}
+.footer-contact a, p{
+    font-size: 1rem;
+}
+/* MEDIA QUERIES */
+@media screen and (max-width: 1100px){
+
+    .bag-total-section{
+        margin-right: 20px;
+    }
+    .total-cost{
+        font-size: 2.7rem;
+    }
+}
+/* IPAD */
+@media screen and (max-width: 900px){
+    .bag-section-container{
+        padding-left: 60px;
+        padding-right: 50px;
+    }
+    .bag-total-section{
+        margin-right: 20px;
+        font-size: 2rem;
+    }
+    .posters-in-bag{
+        max-width: 60%;
+    }
+    .total-cost{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 668px){
+    #consent-popup{
+        border-radius: 4px;
+        height: 40px;
+        width: 80%;
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+    #consent-popup p, a{
+        font-size: 1.2rem;
+        letter-spacing: 0.7px;
+        margin-bottom: 0px;
+    }
+    #consent-popup a{
+        text-decoration: underline;
+    }
+    #consent-popup-btn{
+        border-radius: 4px;
+        height: 40px;
+        width: 15%;
+        padding: 2px;
+        font-size: 1.4rem;
+    }
+    #consent-popup-btn a{
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+    .main-container{
+        padding-bottom: 50px;
+        padding-top: 130px;
+        /* padding: 140px 0px 100px 0px; */
+    }
+    .section-container{
+        height: auto;
+        padding: 10px;
+        padding-top: 10px;
+    }
+
+    .bag-section-container{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .posters-in-bag{
+        max-width: 100%;
+    }
+    .bag-total-section{
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-bottom: 0px;
+        margin-top: 35px;
+    }
+    .total-cost{
+        font-size: 2.8rem;
+    }
+    #checkout-button{
+        margin-top: 30px;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    .poster-in-bag-img{
+        width:  70%;
+        max-height: 320px;
+    }
+    .poster-in-bag-img-container{
+        padding: 0px;
+        width: 50%;
+    }
+    .nav-list {
+        padding-bottom: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        position: fixed;
+        top: -100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: top .4s ease-out;
+        padding-top: 180px;
+        margin: 0px;
+        display: block;
+        text-align: center;
+        flex-direction: column;
+        
+    }
+    .change{
+    top: 0;
+    
+    height: 100vh;
+    }
+    .list-logo{
+    visibility: visible;
+    }
+    .navbar{
+        height: 110px;
+    }
+    .bag-logo{
+    position: fixed;
+    right: 15px;
+    top: 43px;
+    margin-left: auto;
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    }
+    .bag-change{
+        display: none;
+    }
+    .nav-item {
+        list-style: none;
+        margin: 60px;
+    }
+    .nav-link {
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: rgb(133, 133, 133);
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        padding: 3px 0;
+    }
+    .hamburger-menu{
+        visibility: visible;
+        width: 30px;
+        height: 30px;
+        padding: 8px 0px 2px 0px;
+        position: fixed;
+        left: 60px;
+        top: 37px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .burger-change{
+        position: fixed;
+        left: 60px;
+        top: 37px;
+    }
+    .line{
+        background-color: rgb(141, 141, 141);
+        height: 2px;
+        width: 100%;
+    }
+    .burger-change .line1 {
+        transform: rotateZ(-45deg) translate(-5px, 8px);
+    }
+    .burger-change .line2 {
+        opacity: 0;
+    }
+    .burger-change .line3 {
+        transform: rotateZ(45deg) translate(-5px, -8px);
+    }
+
+
+
+}

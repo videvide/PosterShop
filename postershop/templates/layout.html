@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bag.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <script src="https://js.stripe.com/v3/"></script>
+
+  {% block head %}
+  {% endblock %}
+  {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title>Poster Shop</title>
+  {% endif %}
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="{{ url_for('posters') }}" class="nav-link">Shop posters</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a href="{{ url_for('artworks') }}" class="nav-link">Shop fine-art</a>
+      </li> -->
+      <li class="nav-item">
+        <a href="{{ url_for('info') }}" class="nav-link">Info</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('about') }}" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <div class="nested-bar">
+      <div class="hamburger-menu">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+      <div class="bag-logo"><img src="{{ url_for('static', filename='icons/bag-logo.svg') }}" alt=""><span
+          class="bag-span"></span></div>
+    </div>
+  </nav>
+  <div class="bag-overlay">
+  </div>
+  <div class="bag-div">
+    <div class="bag-header">
+      <div class="close-bag">Close</div>
+    </div>
+    <div class="bag-body">
+      <div class="bag-posters"></div>
+    </div>
+    <div class="bag-footer">
+      <div class="total-cost"><small>Total</small><span></span></div>
+      <div class="checkout-button">Checkout
+      </div>
+      <div class="stripe-logo">
+        <img src="{{ url_for('static', filename='icons/stripe.svg') }}" alt="">
+      </div>
+      <div class="clear-bag-button" onclick="clearBag()">Clear the bag</div>
+    </div>
+  </div>
+  <div class="empty-bag-overlay">
+  </div>
+  <div class="empty-bag">
+    <div class="bag-header">
+      <div class="close-bag">Close</div>
+    </div>
+    <div class="empty-bag-body">
+      <h1>Your bag is empty</h1>
+      <a href="{{ url_for('posters') }}">
+      </a>
+    </div>
+  </div>
+  <div class="main-container">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+
+  <div class="footer">
+    <ul class="footer-ul">
+      <a href="{{ url_for('privacy') }}">
+        <li>Privacy</li>
+      </a>
+      <a href="{{ url_for('info') }}">
+        <li>Info</li>
+      </a>
+      <a href="{{ url_for('contact') }}">
+        <li>Contact</li>
+      </a>
+    </ul>
+    <p class="footer-copy">&copy; 2021 No1 art collective</p>
+  </div>
+  <div id="consent-container">
+    <div id="consent-popup">
+      <p>By using this site you agree to our <a href="{{ url_for('privacy') }}">privacy policy</a>.
+        Please accept these before using our site.</p>
+    </div>
+    <div id="consent-popup-btn">
+      <a id="accept">OK!</a>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

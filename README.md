@@ -1,3 +1,3 @@
 # PosterShop
 
-Print on demand postershop with Stripe payment integration made with Flask.
+Print on demand postershop with Stripe payment integration built with Flask.
